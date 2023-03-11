@@ -1,1 +1,1 @@
-console.log("Testing");
+(()=>{"use strict";class n{constructor(n,o,t,e){this.name=n,this.description=o,this.dueDate=t,this.priority=e}}const o=new n("laundry","doing laundry","now","high");console.log(o);const t=new n("laundry","doing laundry","now","high");console.log(t),document.getElementById("content")})();
