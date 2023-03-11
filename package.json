@@ -1,0 +1,23 @@
+{
+  "name": "todo-odic-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDArciniegas/todo-odin-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JDArciniegas/todo-odin-project/issues"
+  },
+  "homepage": "https://github.com/JDArciniegas/todo-odin-project#readme"
+}
