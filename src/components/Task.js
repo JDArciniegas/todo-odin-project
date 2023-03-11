@@ -1,5 +1,6 @@
 class Task {
-  constructor(name, description, dueDate, priority){
+
+  constructor(name, description, dueDate, priority) {
     this.name = name,
     this.description = description,
     this.dueDate = dueDate;
@@ -7,6 +8,5 @@ class Task {
   }
 }
 
-const newTask = new Task('laundry', 'doing laundry', 'now', 'high');
-console.log(newTask);
+
 export default Task;
