@@ -1,14 +1,21 @@
 import Task from "./components/Task";
+import Project from "./components/Project";
 
 const newTask = new Task("laundry", "doing laundry", "now", "high");
-const newTask1 = new Task("laundry", "doing laundry", "now", "high");
-const newTask2 = new Task("laundry", "doing laundry", "now", "high");
-const newTask3 = new Task("laundry", "doing laundry", "now", "high");
+const newTask1 = new Task("dishes", "doing laundry", "now", "high");
+const newTask2 = new Task("tv", "doing laundry", "now", "high");
+const newTask3 = new Task("car", "doing laundry", "now", "high");
 
-const tasks = [newTask, newTask1, newTask2, newTask3]
+const todayTasks = new Project("Today");
+// todayTasks.projectTasks.push(newTask);
+// todayTasks.projectTasks.push(newTask1);
+// todayTasks.projectTasks.push(newTask2);
+// todayTasks.projectTasks.push(newTask3);
+todayTasks.addtask(newTask);
+todayTasks.addtask(newTask1);
+todayTasks.addtask(newTask2);
+todayTasks.addtask(newTask3);
 
-console.log(tasks);
+console.log(todayTasks.projectTasks);
 
-
-document.getElementById('content');
-
+document.getElementById("content");
