@@ -5,7 +5,7 @@ class Task {
     this.dueDate = dueDate;
     this.priority = priority;
   }
-}
 
+}
 
 export default Task;

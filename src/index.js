@@ -16,6 +16,14 @@ todayTasks.addtask(newTask1);
 todayTasks.addtask(newTask2);
 todayTasks.addtask(newTask3);
 
-console.log(todayTasks.projectTasks);
+Object.values(todayTasks.projectTasks).forEach((item, index) => {
+  item.id = index
+  console.log((item.id));
+  console.log(item);
+})
+
+
+
+
 
 document.getElementById("content");
