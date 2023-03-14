@@ -1,3 +1,5 @@
+import Project from "./Project";
+import Task  from "./Task";
 const DOM = (() => {
 
   // function to create new element
@@ -12,10 +14,9 @@ const DOM = (() => {
 
 
   const taskContainer = createElement('div');
-  taskContainer.textContent = 'test'
 
   const projectContainer = createElement('div');
-  projectContainer.textContent = "jajaja"
+
 
   const DOMContainer = createElement('div');
   addClassToElement(DOMContainer, 'container')
