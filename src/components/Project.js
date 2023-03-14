@@ -3,8 +3,6 @@ class Project {
     this.name = name;
     this.projectTasks = [];
   }
-
-
 }
 
 // create prototype to add Tasks to Project

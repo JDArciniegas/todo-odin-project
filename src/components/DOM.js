@@ -1,29 +1,13 @@
 import Project from "./Project";
-import Task  from "./Task";
+import Task from "./Task";
+import {homeLayout, projectsContainer} from "./homeLayout";
 const DOM = (() => {
+  const DOMcontainer = document.createElement('div');
+  const projects = new Project("Today");
 
-  // function to create new element
-  const createElement = (element) => {
-    return document.createElement(element);
-  }
-
-  // function to add class name to new elements
-  const addClassToElement = (element, className) => {
-    element.classList.add(className);
-  }
-
-
-  const taskContainer = createElement('div');
-
-  const projectContainer = createElement('div');
-
-
-  const DOMContainer = createElement('div');
-  addClassToElement(DOMContainer, 'container')
-  DOMContainer.appendChild(projectContainer);
-  DOMContainer.appendChild(taskContainer);
-  return DOMContainer
-
+  projectsContainer.append(projects.name);
+  DOMcontainer.appendChild(homeLayout);
+  return DOMcontainer;
 })();
 
 export default DOM;
