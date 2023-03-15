@@ -1,4 +1,4 @@
-import DOM from "./components/DOM";
+import { homeLayout } from "./components/homeLayout";
 
-document.getElementById("content").append(DOM);
+document.getElementById("content").append(homeLayout);
 

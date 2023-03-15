@@ -1,4 +1,5 @@
-@import 'header.css';
+@import 'projectContainer.css';
+@import 'icons.css';
 
 :root{
   --padding-left: 15px;
@@ -19,10 +20,7 @@ body {
 #layout {
   border: 1px solid black;
   margin: 10% 15%;
-  min-height: 500px;
+  height: 500px;
 }
 
-#content {
-  width: 100vw;
-  height: 100vh;
-}
+
