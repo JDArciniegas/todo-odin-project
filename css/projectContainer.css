@@ -1,0 +1,26 @@
+#projects {
+  display: flex !important;
+  align-items: center;
+  height: 100%;
+}
+
+.container-sides{
+  height: 100%;
+}
+
+#left {
+  width: 30%;
+}
+
+#right {
+  width: 70%;
+  background-color: yellow;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--padding-left);
+  border-bottom: 1px solid blue;
+}
