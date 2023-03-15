@@ -18,8 +18,42 @@ const createElementWithClass = (element, className) => {
 // create element with id
 const createElementWithId = (element, className) => {
   let HTMLElement = document.createElement(element);
-  HTMLElement.setAttribute('id', className);
+  HTMLElement.setAttribute("id", className);
   return HTMLElement;
+};
+
+// ******************* left - side of container **********************
+// HEADER
+const createHeader = () => {
+  const headerContainer = createElementWithClass("header", "header-container");
+  // header-container contents
+  const taskHeader = createElementWithClass("h1", "header");
+  taskHeader.innerText = "Projects";
+  // -----
+  headerContainer.appendChild(taskHeader);
+  headerContainer.append(addIcon());
+  return headerContainer;
+};
+// hedaer icon
+const addIcon = () => {
+  let icon = createElementWithClass("span", "material-symbols-outlined");
+  icon.setAttribute("id", "addIcon");
+  icon.innerText = "Add";
+  return icon;
+};
+
+// CONTENTS
+const createContent = () => {
+  const contentContainer = createElementWithClass("div", "items-container");
+  contentContainer.append(createInputText());
+  return contentContainer;
+};
+
+const createInputText = () => {
+  let input = createElement("input");
+  input.setAttribute("placeholder", "Project Name");
+  input.classList.add("hidden");
+  return input;
 };
 
 const leftProjectContainer = () => {
@@ -27,36 +61,30 @@ const leftProjectContainer = () => {
   let left = createElementWithId("div", "left");
   left.classList.add("container-sides");
   // header-container
-  const headerContainer = createElementWithClass("header", "header-container");
-  // header-container contents
-  const taskHeader = createElementWithClass("h1", "header");
-  const addIcon = createElementWithClass("span", "material-symbols-outlined");
-  addIcon.innerText = "Add";
-  taskHeader.innerText = "Projects";
 
-  headerContainer.appendChild(taskHeader);
-  headerContainer.appendChild(addIcon);
   // create container for all new projects and a way to create them
-  left.appendChild(headerContainer);
+  left.appendChild(createHeader());
+  left.appendChild(createContent());
   return left;
-}
+};
+
+// ******************* right - side of container **********************
 
 const rightProjectContainer = () => {
   let right = createElementWithId("div", "right");
   right.classList.add("container-sides");
   return right;
-
-}
+};
 
 const projectsContainer = (() => {
   let projects = createElement("div");
-  projects.setAttribute('id','projects')
-
+  projects.setAttribute("id", "projects");
 
   projects.appendChild(leftProjectContainer());
   projects.appendChild(rightProjectContainer());
   return projects;
 })();
+
 
 const homeLayout = (() => {
   const layout = createElement("div");
@@ -67,4 +95,4 @@ const homeLayout = (() => {
   return layout;
 })();
 
-export { homeLayout, projectsContainer };
+export { homeLayout, projectsContainer, addIcon };
