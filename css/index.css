@@ -1,5 +1,7 @@
 @import 'projectContainer.css';
 @import 'icons.css';
+@import 'inputs.css';
+
 
 :root{
   --padding-left: 15px;
