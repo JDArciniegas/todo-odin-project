@@ -1,3 +1,4 @@
+
 // function to create new element
 const createElement = (element) => {
   return document.createElement(element);
@@ -31,30 +32,27 @@ const createHeader = () => {
   taskHeader.innerText = "Projects";
   // -----
   headerContainer.appendChild(taskHeader);
-  headerContainer.append(addIcon());
+  headerContainer.append(icon);
   return headerContainer;
 };
-// hedaer icon
-const addIcon = () => {
-  let icon = createElementWithClass("span", "material-symbols-outlined");
-  icon.setAttribute("id", "addIcon");
-  icon.innerText = "Add";
-  return icon;
-};
+// header icon
+let icon = createElementWithClass("span", "material-symbols-outlined");
+icon.setAttribute("id", "addIcon");
+icon.innerText = "Add";
+
+
+const inputText = createElement("input");
+inputText.setAttribute("placeholder", "Project Name");
+inputText.classList.add("hidden");
 
 // CONTENTS
 const createContent = () => {
   const contentContainer = createElementWithClass("div", "items-container");
-  contentContainer.append(createInputText());
+  contentContainer.append(inputText);
   return contentContainer;
 };
 
-const createInputText = () => {
-  let input = createElement("input");
-  input.setAttribute("placeholder", "Project Name");
-  input.classList.add("hidden");
-  return input;
-};
+
 
 const leftProjectContainer = () => {
   // main container of project names
@@ -85,14 +83,17 @@ const projectsContainer = (() => {
   return projects;
 })();
 
+// ********* EVENTS *******
+icon.addEventListener("click", (e) => {
+  inputText.classList.remove("hidden");
+});
 
 const homeLayout = (() => {
   const layout = createElement("div");
   layout.setAttribute("id", "layout");
 
   layout.append(projectsContainer);
-
   return layout;
 })();
 
-export { homeLayout, projectsContainer, addIcon };
+export { homeLayout, projectsContainer };
