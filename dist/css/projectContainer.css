@@ -14,7 +14,6 @@
 
 #right {
   width: 70%;
-  background-color: yellow;
 }
 
 .header-container {
@@ -23,4 +22,5 @@
   justify-content: space-between;
   padding: 0 var(--padding-left);
   border-bottom: 1px solid blue;
+  background-color: blue;
 }
