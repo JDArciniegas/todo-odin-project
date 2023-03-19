@@ -1,6 +1,4 @@
-import { homeLayout } from "./components/homeLayout";
+import Layout from "./components/Layout";
 
-
-document.getElementById("content").append(homeLayout);
-
+document.getElementById('content').append(Layout())
 
