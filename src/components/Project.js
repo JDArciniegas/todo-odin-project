@@ -6,11 +6,8 @@ class Project {
 }
 
 // create prototype to add Tasks to Project
-Project.prototype.addtask = function(task){
-  this.projectTasks.push(task);
+Project.prototype.addTask = function(task){
+  return this.projectTasks.push(task);
 }
-
-// crate prototype to extract unique id for Task;
-
 
 export default Project;
