@@ -1,9 +1,9 @@
-@import 'projectContainer.css';
 @import 'icons.css';
 @import 'inputs.css';
+@import 'lists.css';
 
 
-:root{
+:root {
   --padding-left: 15px;
 }
 
@@ -15,6 +15,13 @@ body {
   box-sizing: border-box;
 }
 
-.container {
-  padding: 5%;
+#content {
+  background-color: grey;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+#main-container {
+  padding: 5px 25px;
 }
