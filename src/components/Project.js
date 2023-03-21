@@ -3,20 +3,20 @@ import Task from "./Task";
 class Project {
   constructor(name) {
     this.name = name;
-    this.projects = [];
+    this.projectList = [];
   }
 
   add(name, description, dueDate, priority) {
     const task = new Task(name, description, dueDate, priority);
-    this.projects.push(task);
+    this.projectList.push(task);
   }
 
   remove(index) {
-    this.projects.splice(index, 1);
+    this.projectList.splice(index, 1);
   }
 
   complete(index) {
-    const task = this.projects[index];
+    const task = this.projectList[index];
     task.complete();
   }
 }
