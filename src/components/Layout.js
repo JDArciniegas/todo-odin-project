@@ -2,28 +2,39 @@ import Project from "./Project";
 
 // default starting projects
 const homeProject = new Project("Home");
-homeProject.add('Laundry','Laundry Day', '2023-04-01','high');
+homeProject.add("Laundry", "Laundry Day", "2023-04-01", "high");
 homeProject.add("Cook", "Dinner", "2023-04-01", "medium");
 
-
+// header element
 const createHeader = () => {
-  const header = document.createElement('header');
-  const h1 = document.createElement('h1');
-  h1.textContent = "Todo List"
+  const header = document.createElement("header");
+  const h1 = document.createElement("h1");
+  h1.textContent = "Todo List";
   header.appendChild(h1);
-  return header
-}
+  return header;
+};
+// name list for Projects
+const projectNameContainer = (project) => {
+  const leftContainer = document.createElement("div");
+  leftContainer.setAttribute('id','left')
+  leftContainer.append(displayProjectName(project));
+  return leftContainer;
+};
+// project List
+const projectListContainer = (project) => {
+  const rightContainer = document.createElement("div");
+  rightContainer.setAttribute("id", "right");
+  rightContainer.append(displayProjectList(project));
+  return rightContainer;
+};
 
-const contentContainer = () => {
-  const contentContainer = document.createElement('div');
-  const projectNameContainer = document.createElement('div');
-  const projectListContainer = document.createElement("div");
-  projectNameContainer.append(displayProjectName(homeProject));
-  projectListContainer.append(displayProjectList(homeProject))
-  contentContainer.appendChild(projectNameContainer);
-  contentContainer.appendChild(projectListContainer);
+const contentContainer = (project) => {
+  const contentContainer = document.createElement("div");
+  contentContainer.setAttribute("id", "content-container");
+  contentContainer.append(projectNameContainer(project));
+  contentContainer.append(projectListContainer(project));
   return contentContainer;
-}
+};
 
 const displayProjectName = (project) => {
   const projectName = document.createElement("p");
@@ -44,7 +55,7 @@ const displayProjectList = (project) => {
 const Layout = () => {
   const homeLayout = document.createElement("div");
   homeLayout.append(createHeader());
-  homeLayout.append(contentContainer());
+  homeLayout.append(contentContainer(homeProject));
 
   return homeLayout;
 };
