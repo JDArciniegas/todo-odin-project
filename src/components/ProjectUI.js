@@ -1,4 +1,5 @@
 import Project from "./Project";
+import { findTasks } from "./TaskUi";
 
 const ProjectUI = () => {
   // project names container
@@ -9,8 +10,8 @@ const ProjectUI = () => {
   workProject.add("report", "ninja report", "2023-04-01", "high");
   allProjects.push(homeProject);
   allProjects.push(workProject);
-  const projectListNames = document.querySelector("#project-list");
 
+  const projectListNames = document.querySelector("#project-list");
   // add project form
   const projectForm = document.querySelector("#project-form");
   const projectName = document.querySelector("#project-name");
@@ -20,31 +21,16 @@ const ProjectUI = () => {
 
   const createProject = (project) => {
     let newProject = new Project(project);
-    return newProject;
+    allProjects.push(newProject);
   };
 
-  const addProjectToList = (allProjects) => {
-    allProjects.forEach((item) => {
+  const displayProjectNames = (projects) => {
+    projects.forEach((project) => {
       let listItem = document.createElement("li");
-      listItem.textContent = item.name;
-      projectListNames.append(listItem);
+      listItem.textContent = project.name;
+      projectListNames.appendChild(listItem);
     });
-    return projectListNames;
   };
-
-  addProjectToList(allProjects);
-
-  const findProject = () => {
-    allProjects.forEach((project) => {
-      Object.keys(project).find((key) => {
-        if(project[key] === "Home"){
-          console.log(project);
-        };
-      })
-    })
-  };
-
-  findProject();
 
   // ****** EVENTS *****
   addProjectButton.addEventListener("click", (e) => {
@@ -52,13 +38,16 @@ const ProjectUI = () => {
   });
 
   projectListNames.addEventListener("click", (e) => {
-    console.log(e.target);
+   findTasks(allProjects, e.target.textContent.toLowerCase())
   });
 
   projectForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    addProjectToList(projectName.value);
+    createProject(projectName.value);
+    displayProjectNames(allProjects);
   });
+
+  displayProjectNames(allProjects);
 };
 
 export default ProjectUI;
