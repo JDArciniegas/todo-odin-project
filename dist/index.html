@@ -28,12 +28,14 @@
           <ul id="project-list"></ul>
         </div>
         <div id="project-tasks">
-          <button id="add-task">✚</button>
+          <button id="add-task" class="hidden">✚</button>
           <form action="#" id="task-form" class="hidden">
-            <input type="text" placeholder="New Task">
-            <input type="date" >
-            <input type="text" placeholder="Priority">
-            <input type="submit" value="✓"><input type="submit" value="𝑥">
+            <input id='task-name'type="text" placeholder="New Task">
+            <input id='task-description'type="text" placeholder="New Task Description">
+            <input id='task-date'type="date" >
+            <input id='task-priority'type="text" placeholder="Priority">
+            <input id='task-submit'type="submit" value="✓">
+            <input type="submit" value="𝑥">
           </form>
         </div>
       </div>
