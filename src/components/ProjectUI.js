@@ -18,7 +18,7 @@ const ProjectUI = () => {
   allProjects.push(homeProject);
   allProjects.push(workProject);
 
-  const projectTasks = document.querySelector("#project-tasks");
+  const projectTasks = document.querySelector("#task-list");
   const projectListNames = document.querySelector("#project-list");
   // add project form
   const projectForm = document.querySelector("#project-form");
@@ -45,19 +45,19 @@ const ProjectUI = () => {
   const displayProjectNames = (projects) => {
     projects.forEach((project) => {
       let listItem = document.createElement("li");
+      listItem.classList.add("project");
       listItem.textContent = project.name;
       projectListNames.appendChild(listItem);
     });
   };
 
   const displayTasks = (tasks) => {
-    const taskList = document.createElement("ul");
     tasks.forEach((task) => {
       let listItem = document.createElement("li");
+      listItem.classList.add("task");
       listItem.textContent = `${task.name} - ${task.description} - ${task.dueDate} - ${task.priority}`;
-      taskList.appendChild(listItem);
+      projectTasks.appendChild(listItem);
     });
-    projectTasks.appendChild(taskList);
   };
 
   const findTasks = (projects, target) => {
@@ -70,11 +70,15 @@ const ProjectUI = () => {
 
   const findProject = (projects, target) => {
     projects.find((project) => {
-      if(project.name.toLowerCase() === target){
+      if (project.name.toLowerCase() === target) {
         currentProject = project;
-      };
-    })
-  }
+      }
+    });
+  };
+
+  const clearTasks = () => {
+    projectTasks.innerHTML = "";
+  };
 
   // ****** EVENTS *****
   addProjectButton.addEventListener("click", (e) => {
@@ -82,8 +86,8 @@ const ProjectUI = () => {
   });
 
   projectListNames.addEventListener("click", (e) => {
-    addTaskButton.classList.remove('hidden');
-    let hah = findTasks(allProjects, e.target.textContent.toLowerCase());
+    addTaskButton.classList.remove("hidden");
+    clearTasks();
     findTasks(allProjects, e.target.textContent.toLowerCase());
     findProject(allProjects, e.target.textContent.toLowerCase());
   });
@@ -91,7 +95,7 @@ const ProjectUI = () => {
   projectForm.addEventListener("submit", (e) => {
     e.preventDefault();
     createProject(projectName.value);
-    projectListNames.innerHTML = '';
+    projectListNames.innerHTML = "";
     displayProjectNames(allProjects);
   });
 
@@ -102,12 +106,12 @@ const ProjectUI = () => {
 
   taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    currentProject.add('1,2,3,4')
-    console.log(currentProject);
+    currentProject.add("1,2,3,4");
     displayTasks(currentProject.projectList);
   });
 
   displayProjectNames(allProjects);
+  displayTasks(homeProject.projectList);
 };
 
 export default ProjectUI;
