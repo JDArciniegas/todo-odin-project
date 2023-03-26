@@ -1,8 +1,50 @@
-.todo-list {
-  padding: 20px;
-  width: 80%;
-  margin: auto;
+#project-list {
+  width: 100%;
+  flex-direction: column;
 }
- li {
+
+.task, .project {
+  font-size: 18px;
+  padding: 10px 5px;
+  list-style: none;
   text-transform: capitalize;
- }
+  width: 80%;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+}
+
+.project:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.project-task-info{
+  display: flex;
+  justify-content: flex-start;
+}
+
+#todo-content {
+  display: flex;
+  position: relative;
+  background-color: var(--blue);
+  min-height: 80vh;
+}
+
+#project-names {
+  width: 20%;
+  color: var(--white);
+}
+
+#project-tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--green);
+  width: 80%;
+}
+
+#task-list {
+  justify-self: flex-start;
+  width: 85%;
+}
