@@ -1,17 +1,21 @@
 #project-list {
   width: 100%;
   flex-direction: column;
+  background-color: var(--blue);
 }
 
 .task, .project {
   font-size: 18px;
-  padding: 10px 5px;
   list-style: none;
   text-transform: capitalize;
   width: 80%;
   border-radius: 10px;
   transition: background-color 0.5s;
   transition: color 0.5s;
+}
+
+.project{
+  padding: 10px 5px;
 }
 
 .project:hover {
@@ -27,7 +31,6 @@
 #todo-content {
   display: flex;
   position: relative;
-  background-color: var(--blue);
   min-height: 80vh;
 }
 
@@ -40,11 +43,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--green);
+  background-color: var(--green-transparent);
   width: 80%;
 }
 
 #task-list {
   justify-self: flex-start;
   width: 85%;
+}
+
+.task{
+  background-color: var(--green-transparent);
+  margin: 20px;
+  padding: 0px 15px 15px 15px;
+}
+
+.task-container-top{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.task-container-bottom{
+  margin: 0 !important;
+}
+
+.main-task-info{
+  display:flex;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task-container{
+  padding: 0;
 }

@@ -7,7 +7,8 @@
 :root {
   /* colors */
   --blue: #1B2845;
-  --green: #89B0AE;
+  --green-full: #89B0AE;
+  --green-transparent: rgba(137, 176, 174, 0.3);
   --orange: #F08700;
   --white: #F9F5F1;
   --grey: #393E41;
