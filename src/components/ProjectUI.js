@@ -54,8 +54,29 @@ const ProjectUI = () => {
   const displayTasks = (tasks) => {
     tasks.forEach((task) => {
       let listItem = document.createElement("li");
+      let mainInfo = document.createElement("span");
+      mainInfo.classList.add("main-task-info");
+      let top = document.createElement("div");
+      top.classList.add("task-container-top");
+      let name = document.createElement("p");
+      name.textContent = task.name;
+      let description = document.createElement("p");
+      description.textContent = task.description;
+      description.classList.add("task-container-bottom");
+      let date = document.createElement("p");
+      date.textContent = task.dueDate;
+      let priority = document.createElement("p");
+      priority.textContent = task.priority;
+
+      mainInfo.appendChild(name);
+      mainInfo.appendChild(priority);
+      top.appendChild(mainInfo);
+      top.appendChild(date);
+
+
       listItem.classList.add("task");
-      listItem.textContent = `${task.name} - ${task.description} - ${task.dueDate} - ${task.priority}`;
+      listItem.appendChild(top);
+      listItem.appendChild(description);
       projectTasks.appendChild(listItem);
     });
   };
@@ -106,7 +127,13 @@ const ProjectUI = () => {
 
   taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    currentProject.add("1,2,3,4");
+    clearTasks();
+    currentProject.add(
+      taskName.value,
+      taskDescription.value,
+      taskDate.value,
+      taskPriority.value
+    );
     displayTasks(currentProject.projectList);
   });
 
