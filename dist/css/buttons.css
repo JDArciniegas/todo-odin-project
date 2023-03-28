@@ -3,7 +3,7 @@
   background-color: var(--blue);
   border: 2px solid var(--blue);
   color:var(--white);
-  height: 30px;
+  height: 100%;
   border-radius: 5px;
   font-size: 18px;
   transition: background-color 0.15s;

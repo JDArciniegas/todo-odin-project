@@ -1,38 +1,59 @@
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
-input{
- height: 30px;
-border-style: none none solid none;
-background-color: var(--white);
-border-color: var(--blue);
+input {
+  height: 100%;
+  border-style: none none solid none;
+  background-color: var(--green-transparent);
+  border-color: var(--green-full);
+  border-width: 3px;
+  color: var(--blue);
 }
 
-input[type=text]{
+input[type=text] {
   border-radius: 5px 5px 0 0;
-  padding-left: 5px;
   font-size: 18px;
 }
 
-::placeholder{
+input[type=date] {
   font-family: var(--content-font);
+  padding-left: 1px 2px;
+  font-size: 18px;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
 }
 
-form{
+::placeholder {
+  font-family: var(--content-font);
+  color: var(--blue);
+}
+
+select {
+  font-family: var(--content-font);
+  text-transform: capitalize;
+  padding-left: 10px;
+  background-color: var(--green-transparent);
+  border: 3px solid var(--green-full);
+  border-radius: 5px 5px 0 0;
+  font-size: 18px;
+}
+
+form {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.inline-button{
+.inline-button {
   font-size: 18px;
-  height: 30px;
-  width: 30px;
+  height: 100%;
+  width: 35px;
   line-height: 25px;
 }
 
-#task-form{
-  width: 90%;
+#task-form {
+  margin-top: 25px;
+  width: 75%;
+  height: 35px;
 }
-
-
