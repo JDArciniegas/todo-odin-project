@@ -23,8 +23,10 @@
           <ul id="project-list">
              <form action="#" class="hidden" id="project-form">
             <input type="text" id="project-name" placeholder="New Project">
-            <input type="submit" class='button-submit' id="add-project-button" value="✓">
-            <input type="submit" class='button-submit' class="cancel" value="𝑥">
+            <div>
+              <input type="submit" class='inline-button button-submit' id="add-project-button" value="✓">
+              <input type="submit" class='inline-button button-submit' class="cancel" value="𝑥">
+            </div>
           </form>
           </ul>
         </div>
@@ -34,9 +36,13 @@
             <input id='task-name' type="text" placeholder="New Task">
             <input id='task-description' type="text" placeholder="New Task Description">
             <input id='task-date' type="date">
-            <input id='task-priority' type="text" placeholder="Priority">
-            <input id='task-submit' class='button-submit' type="submit" value="✓">
-            <input type="submit" class='button-submit' value="𝑥">
+            <select id='task-priority' type="text" placeholder="Priority">
+              <option value="high">high</option>
+              <option value="medium">medium</option>
+              <option value="low">low</option>
+            </select>
+            <input id='task-submit' class='inline-button button-submit' type="submit" value="✓">
+            <input type="submit" class='inline-button button-submit' value="𝑥">
           </form>
           <ul id="task-list">
             <li class="task">
