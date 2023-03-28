@@ -57,9 +57,10 @@
 }
 
 .task {
-  background-color: var(--green-transparent);
+  background-color: var(--white);
   margin: 20px;
   padding: 0px 15px 15px 15px;
+  border: 2px solid var(--green-full);
 }
 
 .task-container-top {
@@ -74,9 +75,9 @@
 
 .main-task-info {
   display: flex;
-  width: 50%;
   justify-content: flex-start;
   align-items: center;
+  justify-content: space-between;
 }
 
 .task-container {

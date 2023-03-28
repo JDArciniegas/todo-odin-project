@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500&family=Marcellus&family=Yeseva+One&display=swap"
+      rel="stylesheet">
   <title>Todo List</title>
 </head>
 
@@ -21,13 +26,13 @@
       <div id="todo-content">
         <div id="project-names" class="project-task-info">
           <ul id="project-list">
-             <form action="#" class="hidden" id="project-form">
-            <input type="text" id="project-name" placeholder="New Project">
-            <div>
-              <input type="submit" class='inline-button button-submit' id="add-project-button" value="✓">
-              <input type="submit" class='inline-button button-submit' class="cancel" value="𝑥">
-            </div>
-          </form>
+            <form action="#" class="hidden" id="project-form">
+              <input type="text" id="project-name" placeholder="New Project">
+              <div>
+                <input type="submit" class='inline-button button-submit' id="add-project-button" value="✓">
+                <input type="submit" class='inline-button button-submit' class="cancel" value="𝑥">
+              </div>
+            </form>
           </ul>
         </div>
         <div id="project-tasks" class="project-task-info">
@@ -45,26 +50,6 @@
             <input type="submit" class='inline-button button-submit' value="𝑥">
           </form>
           <ul id="task-list">
-            <li class="task">
-              <div class="task-container">
-                <div class="task-container-top">
-                  <span class="main-task-info">
-                    <p>Task Name</p>
-                    <span class="material-symbols-outlined">
-                      priority_high
-                    </span>
-                    <span class="material-symbols-outlined">
-                      priority
-                    </span>
-                    <span class="material-symbols-outlined">
-                      low_priority
-                    </span>
-                  </span>
-                  <p>2023-04-1</p>
-                </div>
-              </div>
-              <p class="task-container-bottom">Task Desciption</p>
-            </li>
           </ul>
         </div>
       </div>

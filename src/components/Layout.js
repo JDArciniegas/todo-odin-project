@@ -50,38 +50,60 @@ const Layout = () => {
     });
   };
 
+  const checkPriority = (priority) => {
+    if (priority === "high") {
+      return "priority_high";
+    } else if (priority === "medium") {
+      return "priority";
+    } else {
+      return "low_priority";
+    }
+  };
+
+  const styleByPriority = (priorityValue, priorityText) => {
+    if (priorityValue.textContent === "priority_high") {
+      priorityValue.classList.add("high");
+    } else if (priorityValue.textContent === "medium") {
+      priorityValue.classList.add("medium");
+    } else if (priorityValue.textContent === "low_priority") {
+      priorityValue.classList.add("low");
+    }
+  };
   const buildTask = (task) => {
-    let container = document.createElement('div');
-      let mainInfo = document.createElement("span");
-      mainInfo.classList.add("main-task-info");
-      let top = document.createElement("div");
-      top.classList.add("task-container-top");
-      let name = document.createElement("p");
-      name.textContent = task.name;
-      let description = document.createElement("p");
-      description.textContent = task.description;
-      description.classList.add("task-container-bottom");
-      let date = document.createElement("p");
-      date.textContent = task.dueDate;
-      let priority = document.createElement("p");
-      priority.textContent = task.priority;
+    let container = document.createElement("div");
+    let mainInfo = document.createElement("span");
+    mainInfo.classList.add("main-task-info");
+    let top = document.createElement("div");
+    top.classList.add("task-container-top");
+    let name = document.createElement("p");
+    name.textContent = task.name;
+    let description = document.createElement("p");
+    description.textContent = task.description;
+    description.classList.add("task-container-bottom");
+    let date = document.createElement("p");
+    date.textContent = task.dueDate;
+    let priority = document.createElement("span");
+    priority.classList.add("material-symbols-outlined");
+    priority.textContent = checkPriority(task.priority);
 
-      mainInfo.appendChild(name);
-      mainInfo.appendChild(priority);
-      top.appendChild(mainInfo);
-      top.appendChild(date);
+    styleByPriority(priority);
 
-      container.classList.add("task-container");
-      container.appendChild(top);
-      container.appendChild(description);
-      return container
-  }
+    mainInfo.appendChild(name);
+    mainInfo.appendChild(priority);
+    top.appendChild(mainInfo);
+    top.appendChild(date);
+
+    container.classList.add("task-container");
+    container.appendChild(top);
+    container.appendChild(description);
+    return container;
+  };
 
   const displayTasks = (tasks) => {
     tasks.forEach((task) => {
       let listItem = document.createElement("li");
-      listItem.append(buildTask(task))
-      listItem.classList.add('task');
+      listItem.append(buildTask(task));
+      listItem.classList.add("task");
       projectTasks.appendChild(listItem);
     });
   };
