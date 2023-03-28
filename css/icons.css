@@ -1,5 +1,6 @@
 
 .material-symbols-outlined {
+  padding-left: 10px;
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -7,4 +8,14 @@
     'opsz' 48
 }
 
+.high{
+ color: red;
+}
 
+.medium{
+  color: yellow;
+}
+
+.low {
+  color: green;
+}

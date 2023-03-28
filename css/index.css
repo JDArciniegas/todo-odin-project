@@ -13,6 +13,12 @@
   --grey: #393E41;
   --purple: #A14EBF;
 
+  /* fonts */
+  --header-font: 'Marcellus',
+    serif;
+  --content-font: 'Marcellus',
+    serif;
+
 }
 
 body {
@@ -23,6 +29,7 @@ body {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
+  font-family: var(--content-font);
 }
 
 #main-container {
@@ -35,5 +42,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px
+  padding: 0 40px;
+  font-family: var(--header-font);
 }

@@ -8,6 +8,7 @@
   font-size: 18px;
   transition: background-color 0.15s;
   transition: color 0.15s;
+  font-family: var(--header-fonts) !important;
 }
 
 .button-submit:hover{
