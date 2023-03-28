@@ -8,15 +8,15 @@
   /* colors */
   --blue: #1B2845;
   --green-full: #89B0AE;
-  --green-transparent: rgba(137, 176, 174, 0.3);
-  --orange: #F08700;
-  --white: #F9F5F1;
+  --green-transparent: rgba(137, 176, 174, 0.2);
+  --white: #EBEBEB;
   --grey: #393E41;
+  --purple: #A14EBF;
 
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--green-transparent);
   color: var(--blue);
   margin: 0px;
   padding: 0px;
@@ -30,6 +30,8 @@ body {
 }
 
 header {
+  border-bottom: 3px double var(--green-full);
+  color: var(--blue);
   display: flex;
   align-items: center;
   justify-content: space-between;
