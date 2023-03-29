@@ -1,6 +1,5 @@
 
 .material-symbols-outlined {
-  padding-left: 10px;
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -8,14 +7,19 @@
     'opsz' 48
 }
 
+.priority-style{
+  font-family: var(--content-font) !important;
+}
+
 .high{
  color: red;
 }
 
 .medium{
-  color: yellow;
+  color: orange;
 }
 
 .low {
   color: green;
 }
+
