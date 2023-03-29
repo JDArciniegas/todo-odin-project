@@ -9,7 +9,7 @@ const Layout = () => {
   let homeProject = new Project("Home");
   homeProject.add("laundry", "do laundry", "2023-05-01", "low");
   homeProject.add("cooking", "Make Dinner", "2023-04-01", "high");
-  homeProject.add("roof leak", "repair leak", "2023-04-01", "high");
+  homeProject.add("roof leak", "repair leak", "2023-04-01", "medium");
 
   let workProject = new Project("work");
   workProject.add("report", "ninja report", "2023-04-01", "high");
@@ -21,20 +21,22 @@ const Layout = () => {
   const projectListNames = document.querySelector("#project-list");
   // add project form
   const projectForm = document.querySelector("#project-form");
-  // project input
   const projectName = document.querySelector("#project-name");
-  // task form
   const taskForm = document.querySelector("#task-form");
 
-  // task inputs
   const taskName = document.querySelector("#task-name");
   const taskDescription = document.querySelector("#task-description");
   const taskDate = document.querySelector("#task-date");
   const taskPriority = document.querySelector("#task-priority");
   const taskSubmit = document.querySelector("#task-submit");
-  // buttons
   const addProjectButton = document.querySelector("#add-new-project");
   const addTaskButton = document.querySelector("#add-task");
+
+  // Get the modal
+  const modal = document.getElementById("myModal");
+
+  // Get the <span> element that closes the modal
+  const span = document.getElementsByClassName("close")[0];
 
   const createProject = (project) => {
     let newProject = new Project(project);
@@ -60,62 +62,62 @@ const Layout = () => {
     }
   };
 
-  // Get the modal
-  var modal = document.getElementById("myModal");
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on the button, open the modal
-  addTaskButton.onclick = function () {
-    modal.style.display = "block";
-  };
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-
   const styleByPriority = (priorityValue, priorityText) => {
     if (priorityValue.textContent === "priority_high") {
       priorityValue.classList.add("high");
-    } else if (priorityValue.textContent === "medium") {
+      priorityText.classList.add("high");
+      priorityText.textContent = "Urgent";
+    } else if (priorityValue.textContent === "priority") {
       priorityValue.classList.add("medium");
+      priorityText.classList.add("medium");
+      priorityText.textContent = "On time";
     } else if (priorityValue.textContent === "low_priority") {
       priorityValue.classList.add("low");
+      priorityText.classList.add("low");
+      priorityText.textContent = "A bit Early";
     }
   };
   const buildTask = (task) => {
+    // main task container
     let container = document.createElement("div");
-    let mainInfo = document.createElement("span");
-    mainInfo.classList.add("main-task-info");
+
+    // containes the information on the top side of the card
     let top = document.createElement("div");
     top.classList.add("task-container-top");
+
+    // conatines Task name, Priority Icon, Priority Text
+    let mainInfo = document.createElement("div");
+    mainInfo.classList.add("main-task-info");
+
+    // ***** Name of Task
     let name = document.createElement("p");
     name.textContent = task.name;
-    let description = document.createElement("p");
-    description.textContent = task.description;
-    description.classList.add("task-container-bottom");
+
+    // ***** Task DueDate
     let date = document.createElement("p");
     date.textContent = task.dueDate;
-    let priority = document.createElement("span");
+
+    // priority info container
+    let priorityContainer = document.createElement("div");
+    priorityContainer.classList.add("priority-container");
+    // ***** Priority Text and Icon
+    let priorityText = document.createElement("p");
+    let priority = document.createElement("i");
     priority.classList.add("material-symbols-outlined");
     priority.textContent = checkPriority(task.priority);
 
-    styleByPriority(priority);
+    // ***** Task Description
+    let description = document.createElement("p");
+    description.textContent = task.description;
+    description.classList.add("task-container-bottom");
+
+    styleByPriority(priority, priorityText);
+
+    priorityContainer.appendChild(priority);
+    priorityContainer.appendChild(priorityText);
 
     mainInfo.appendChild(name);
-    mainInfo.appendChild(priority);
+    mainInfo.appendChild(priorityContainer);
     top.appendChild(mainInfo);
     top.appendChild(date);
 
@@ -155,12 +157,8 @@ const Layout = () => {
   };
 
   // ****** EVENTS *****
-  addProjectButton.addEventListener("click", (e) => {
-    projectForm.classList.remove("hidden");
-  });
 
   projectListNames.addEventListener("click", (e) => {
-    addTaskButton.classList.remove("hidden");
     clearTasks();
     findTasks(allProjects, e.target.textContent.toLowerCase());
     findProject(allProjects, e.target.textContent.toLowerCase());
@@ -173,10 +171,26 @@ const Layout = () => {
     displayProjectNames(allProjects);
   });
 
-  // addTaskButton.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   taskForm.classList.remove("hidden");
-  // });
+  // When the user clicks on the button, open the modal
+  addTaskButton.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  taskSubmit.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 
   taskForm.addEventListener("submit", (e) => {
     e.preventDefault();

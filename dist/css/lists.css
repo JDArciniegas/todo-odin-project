@@ -5,7 +5,10 @@
   list-style-type: none;
   padding: 0;
   align-items: space-between;
-  padding: 15px;
+  justify-content: center;
+  margin-top: 100px;
+  border-top: 3px groove var(--blue);
+  border-bottom: 3px groove var(--blue);
 }
 
 .task,
@@ -13,19 +16,20 @@
   font-size: 18px;
   list-style: none;
   text-transform: capitalize;
-  width: 80%;
   border-radius: 10px;
   transition: background-color 0.5s;
   transition: color 0.5s;
 }
 
 .project {
-  padding: 10px 5px;
-}
+  padding: 10px 0;
+  margin: 10px auto;
+  width: inherit;
+  }
 
 .project:hover {
-  background-color: var(--purple);
-  color: var(--white);
+text-decoration: underline;
+color: var(--purple);
 }
 
 .project-task-info {
@@ -42,6 +46,10 @@
 #project-names {
   width: 25%;
   background-color: var(--green-transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  padding: 35px 15px;
 }
 
 #project-tasks {
@@ -82,4 +90,11 @@
 
 .task-container {
   padding: 0;
+}
+
+.priority-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
 }

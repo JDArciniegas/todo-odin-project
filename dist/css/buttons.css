@@ -17,9 +17,6 @@
   border: 2px solid var(--purple);
 }
 
-.form-buttons{
-  background-color: red;
-}
 
 #add-task{
   position: absolute;

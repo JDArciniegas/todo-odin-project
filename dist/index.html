@@ -21,34 +21,33 @@
     <div class="todo-list">
       <header>
         <h1>Todo List</h1>
-        <button id="add-new-project" class="button-submit">Add New Project</button>
       </header>
       <div id="todo-content">
         <div id="project-names" class="project-task-info">
+          <form action="#" class="" id="project-form">
+            <input type="text" id="project-name" placeholder="Add New Project">
+            <div class="form-buttons">
+              <input type="submit" class='inline-button button-submit' id="add-project-button" value="✓">
+            </div>
+          </form>
           <ul id="project-list">
-            <form action="#" class="hidden" id="project-form">
-              <input type="text" id="project-name" placeholder="New Project">
-              <div class="form-buttons">
-                <input type="submit" class='inline-button button-submit' id="add-project-button" value="✓">
-              </div>
-            </form>
           </ul>
         </div>
         <div id="project-tasks" class="project-task-info">
-          <button id="add-task" class="button-submit hidden">New Task</button>
+          <button id="add-task" class="button-submit">New Task</button>
           <div id="myModal" class="modal">
             <div class="modal-content">
               <form action="#" id="task-form">
-                <input id='task-name' type="text" placeholder="New Task">
-                <input id='task-description' type="text" placeholder="New Task Description">
-                <input id='task-date' type="date">
-                <select id='task-priority' type="text" placeholder="Priority">
+                <input id='task-name' type="text" placeholder="New Task" required>
+                <input id='task-description' type="text" placeholder="New Task Description" required>
+                <input id='task-date' type="date" required>
+                <select id='task-priority' type="text" placeholder="Priority" required>
                   <option value="high">high</option>
                   <option value="medium">medium</option>
                   <option value="low">low</option>
                 </select>
                 <div class="form-buttons">
-                  <input id='task-submit' class='inline-button button-submit' type="submit" value="✓">
+                  <input id='task-submit' class='inline-button button-submit' type="submit" value="Add Task">
                 </div>
                 <span class="close">&times;</span>
             </div>
