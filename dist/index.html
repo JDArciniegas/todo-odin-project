@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500&family=Marcellus&family=Yeseva+One&display=swap"
-      rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500&family=Marcellus&family=Yeseva+One&display=swap"
+    rel="stylesheet">
   <title>Todo List</title>
 </head>
 
@@ -28,26 +28,31 @@
           <ul id="project-list">
             <form action="#" class="hidden" id="project-form">
               <input type="text" id="project-name" placeholder="New Project">
-              <div>
+              <div class="form-buttons">
                 <input type="submit" class='inline-button button-submit' id="add-project-button" value="✓">
-                <input type="submit" class='inline-button button-submit' class="cancel" value="𝑥">
               </div>
             </form>
           </ul>
         </div>
         <div id="project-tasks" class="project-task-info">
-          <button id="add-task" class="button-submit hidden">✚</button>
-          <form action="#" id="task-form" class="hidden">
-            <input id='task-name' type="text" placeholder="New Task">
-            <input id='task-description' type="text" placeholder="New Task Description">
-            <input id='task-date' type="date">
-            <select id='task-priority' type="text" placeholder="Priority">
-              <option value="high">high</option>
-              <option value="medium">medium</option>
-              <option value="low">low</option>
-            </select>
-            <input id='task-submit' class='inline-button button-submit' type="submit" value="✓">
-            <input type="submit" class='inline-button button-submit' value="𝑥">
+          <button id="add-task" class="button-submit hidden">New Task</button>
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <form action="#" id="task-form">
+                <input id='task-name' type="text" placeholder="New Task">
+                <input id='task-description' type="text" placeholder="New Task Description">
+                <input id='task-date' type="date">
+                <select id='task-priority' type="text" placeholder="Priority">
+                  <option value="high">high</option>
+                  <option value="medium">medium</option>
+                  <option value="low">low</option>
+                </select>
+                <div class="form-buttons">
+                  <input id='task-submit' class='inline-button button-submit' type="submit" value="✓">
+                </div>
+                <span class="close">&times;</span>
+            </div>
+          </div>
           </form>
           <ul id="task-list">
           </ul>
