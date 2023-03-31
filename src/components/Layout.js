@@ -136,8 +136,6 @@ const buildTask = (task) => {
    let isComplete = document.createElement("input");
    isComplete.setAttribute('type','checkbox');
 
-   bottomInfo.appendChild(isComplete);
-
   styleByPriority(priority, priorityText);
 
   priorityContainer.appendChild(priority);
