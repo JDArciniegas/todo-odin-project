@@ -131,10 +131,9 @@ const buildTask = (task) => {
   bottomInfo.classList.add("task-container-bottom");
 
   let description = document.createElement("p");
+  description.classList.add('bottom')
   description.textContent = task.description;
 
-   let isComplete = document.createElement("input");
-   isComplete.setAttribute('type','checkbox');
 
   styleByPriority(priority, priorityText);
 
@@ -145,11 +144,10 @@ const buildTask = (task) => {
   mainInfo.appendChild(priorityContainer);
   top.appendChild(mainInfo);
   top.appendChild(date);
-  bottomInfo.appendChild(description);
 
   container.classList.add("task-container");
   container.appendChild(top);
-  container.appendChild(bottomInfo);
+  container.appendChild(description);
   return container;
 };
 
