@@ -7,8 +7,6 @@
   align-items: space-between;
   justify-content: center;
   margin-top: 100px;
-  border-top: 3px groove var(--blue);
-  border-bottom: 3px groove var(--blue);
 }
 
 .task,
@@ -26,6 +24,7 @@
   padding: 10px 0;
   margin: 10px auto;
   width: inherit;
+  pointer-events: all;
   }
 
 .project:hover {

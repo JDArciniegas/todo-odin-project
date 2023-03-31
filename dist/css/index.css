@@ -47,3 +47,11 @@ header {
   font-family: var(--header-font);
 }
 
+.selected{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+#current-project{
+  text-transform: capitalize;
+}
