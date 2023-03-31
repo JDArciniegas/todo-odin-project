@@ -127,9 +127,16 @@ const buildTask = (task) => {
   priority.textContent = checkPriority(task.priority);
 
   // ***** Task Description
+  let bottomInfo = document.createElement("div");
+  bottomInfo.classList.add("task-container-bottom");
+
   let description = document.createElement("p");
   description.textContent = task.description;
-  description.classList.add("task-container-bottom");
+
+   let isComplete = document.createElement("input");
+   isComplete.setAttribute('type','checkbox');
+
+   bottomInfo.appendChild(isComplete);
 
   styleByPriority(priority, priorityText);
 
@@ -140,10 +147,11 @@ const buildTask = (task) => {
   mainInfo.appendChild(priorityContainer);
   top.appendChild(mainInfo);
   top.appendChild(date);
+  bottomInfo.appendChild(description);
 
   container.classList.add("task-container");
   container.appendChild(top);
-  container.appendChild(description);
+  container.appendChild(bottomInfo);
   return container;
 };
 
